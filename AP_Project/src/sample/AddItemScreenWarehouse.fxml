@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddItemScreenWarehouse">
+   <children>
+      <ComboBox fx:id="addtype" layoutX="32.0" layoutY="45.0" onAction="#selectType" prefWidth="150.0" />
+      <ComboBox fx:id="cattype" layoutX="232.0" layoutY="45.0" onAction="#selectCat" prefWidth="150.0" />
+      <ComboBox fx:id="subcattype" layoutX="419.0" layoutY="45.0" prefWidth="150.0" />
+      <TextField fx:id="name" layoutX="74.0" layoutY="109.0" />
+      <Button fx:id="button" layoutX="268.0" layoutY="314.0" mnemonicParsing="false" onAction="#button_action" text="Add" />
+      <TextField fx:id="quantity" layoutX="369.0" layoutY="109.0" />
+      <TextField fx:id="D" layoutX="74.0" layoutY="169.0" />
+      <TextField fx:id="K" layoutX="369.0" layoutY="169.0" />
+      <TextField fx:id="H" layoutX="74.0" layoutY="233.0" />
+      <Text layoutX="24.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text fx:id="qtext" layoutX="305.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" />
+      <Text fx:id="dtext" layoutX="30.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" />
+      <Text fx:id="ktext" layoutX="320.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K" />
+      <Text fx:id="htext" layoutX="27.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H" />
+      <Text layoutX="64.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+      <Text fx:id="cat" layoutX="275.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category" />
+      <Text fx:id="subcat" layoutX="453.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subcategory" />
+   </children>
+</AnchorPane>

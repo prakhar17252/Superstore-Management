@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DeleteItemScreenStore">
+   <children>
+      <ComboBox fx:id="selecttype" layoutX="225.0" layoutY="64.0" onAction="#selectType" prefWidth="150.0" />
+      <ComboBox fx:id="selectcategory" layoutX="225.0" layoutY="126.0" onAction="#selectCategory" prefWidth="150.0" />
+      <ComboBox fx:id="selectsubcategory" layoutX="225.0" layoutY="191.0" onAction="#selectSubcategory" prefWidth="150.0" />
+      <ComboBox fx:id="selectitem" layoutX="225.0" layoutY="253.0" prefWidth="150.0" />
+      <Button fx:id="button" layoutX="268.0" layoutY="314.0" mnemonicParsing="false" onAction="#buttonaction" text="Button" />
+      <Text layoutX="145.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+      <Text fx:id="cattext" layoutX="129.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category" />
+      <Text fx:id="subtext" layoutX="118.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subcategory" />
+      <Text fx:id="itemtext" layoutX="145.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item" />
+   </children>
+</AnchorPane>

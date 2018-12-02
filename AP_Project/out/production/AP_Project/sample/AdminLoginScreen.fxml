@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminLoginScreen">
+   <children>
+      <TextField fx:id="username" layoutX="246.0" layoutY="129.0" />
+      <PasswordField fx:id="password" layoutX="246.0" layoutY="200.0" />
+      <Text layoutX="168.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text layoutX="170.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <Button fx:id="login" layoutX="433.0" layoutY="287.0" mnemonicParsing="false" onAction="#logindetails" text="Log In" />
+      <ComboBox fx:id="options" layoutX="82.0" layoutY="287.0" prefWidth="150.0" promptText="Select User Type" />
+      <Text fx:id="invalid" layoutX="200.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid Username or password" visible="false" />
+      <Text fx:id="selectoption" layoutX="103.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an option" visible="false" />
+   </children>
+</AnchorPane>

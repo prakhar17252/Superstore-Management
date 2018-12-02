@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StoreAdminScreen">
+   <children>
+      <Button fx:id="add" layoutX="122.0" layoutY="105.0" mnemonicParsing="false" onAction="#addItem" text="Add Category/Subcategory/Item" />
+      <Button fx:id="delete" layoutX="122.0" layoutY="169.0" mnemonicParsing="false" onAction="#deleteItem" text="Delete Category/Subcategory/Item" />
+   </children>
+</AnchorPane>
