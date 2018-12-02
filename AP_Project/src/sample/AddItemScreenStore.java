@@ -117,7 +117,7 @@ public class AddItemScreenStore extends Application implements Initializable {
         }
     }
 
-    public void buttonaction(ActionEvent actionEvent) {
+    public void buttonaction(ActionEvent actionEvent) throws IOException {
         try {
             String opt = type.getValue().toString();
 
@@ -143,6 +143,7 @@ public class AddItemScreenStore extends Application implements Initializable {
             //
         } catch (Exception e) {
         }
+        Database.superuser.serialize();
     }
 
 

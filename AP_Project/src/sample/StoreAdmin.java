@@ -1,6 +1,8 @@
 package sample;
 
-public class StoreAdmin extends User implements OutletAdmin {
+import java.io.Serializable;
+
+public class StoreAdmin extends User implements OutletAdmin, Serializable {
     protected Store store;
 
     StoreAdmin(String name, String pass, String storename, Superstore superstore, Warehouse warehouse) {

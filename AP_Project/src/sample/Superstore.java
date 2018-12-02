@@ -1,9 +1,10 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class Superstore {
+public class Superstore implements Serializable {
     protected String name;
     protected Superuser superuser;
     protected TreeMap<String, Store> stores;

@@ -1,8 +1,9 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.TreeMap;
 
-public abstract class Outlet {
+public abstract class Outlet implements Serializable {
     protected String name;
     protected Superstore superstore;
     protected TreeMap<String, Category> categories;

@@ -1,8 +1,9 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.TreeMap;
 
-public class Subcategory {
+public class Subcategory implements Serializable {
     protected String name;
     protected TreeMap<String, Item> items;
     protected Category category;

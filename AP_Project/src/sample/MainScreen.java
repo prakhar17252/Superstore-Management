@@ -27,6 +27,7 @@ public class MainScreen extends Application {
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.show();
+        Database.superuser.serialize();
     }
 
     public static void main(String[] args) {

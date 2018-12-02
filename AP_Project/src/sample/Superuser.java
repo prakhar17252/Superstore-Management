@@ -1,10 +1,11 @@
 package sample;
 
 import javax.xml.crypto.Data;
+import java.io.*;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class Superuser extends User {
+public class Superuser extends User implements Serializable {
     protected Superstore superstore;
     protected TreeMap<String, WarehouseAdmin> warehouseadmin;
     protected TreeMap<String, StoreAdmin> storeadmin;
@@ -12,10 +13,67 @@ public class Superuser extends User {
 
     Superuser() {
         super("lol", "lmao");
-        superstore = new Superstore("superstore", this);
-        warehouseadmin = new TreeMap<>();
-        storeadmin = new TreeMap<>();
-        usernames = new TreeSet<>();
+        try {
+            deserialize();
+            System.out.println("success");
+            System.out.println(warehouseadmin.size());
+            System.out.println(warehouseadmin.containsKey("a"));
+
+            Database.warehouseadmins = warehouseadmin;
+            Database.storeadmins = storeadmin;
+            Database.stores = superstore.getStores();
+            Database.warehouses = superstore.getWarehouses();
+
+        } catch (Exception e) {
+            superstore = new Superstore("superstore", this);
+            warehouseadmin = new TreeMap<>();
+            storeadmin = new TreeMap<>();
+            usernames = new TreeSet<>();
+        }
+    }
+
+    public void deserialize() throws IOException, ClassNotFoundException {
+        {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("superstore.txt"));
+            superstore = (Superstore) in.readObject();
+        }
+
+        {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("warehouseadmin.txt"));
+            warehouseadmin = (TreeMap<String, WarehouseAdmin>) in.readObject();
+        }
+
+        {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("storeadmin.txt"));
+            storeadmin = (TreeMap<String, StoreAdmin>) in.readObject();
+        }
+
+        {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("usernames.txt"));
+            usernames = (TreeSet<String>) in.readObject();
+        }
+    }
+
+    public void serialize() throws IOException {
+        {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("superstore.txt"));
+            out.writeObject(superstore);
+        }
+
+        {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("warehouseadmin.txt"));
+            out.writeObject(warehouseadmin);
+        }
+
+        {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("storeadmin.txt"));
+            out.writeObject(storeadmin);
+        }
+
+        {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("usernames.txt"));
+            out.writeObject(usernames);
+        }
     }
 
     public void addWarehouseAdmin(String username, String password, String warehousename) throws UserAlreadyExistsException, OutletAlreadyExistsException {
@@ -60,6 +118,14 @@ public class Superuser extends User {
 
     public Superstore getSuperstore() {
         return superstore;
+    }
+
+    public TreeMap<String, StoreAdmin> getStoreadmin() {
+        return storeadmin;
+    }
+
+    public TreeMap<String, WarehouseAdmin> getWarehouseadmin() {
+        return warehouseadmin;
     }
 }
 

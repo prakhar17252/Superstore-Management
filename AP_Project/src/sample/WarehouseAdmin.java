@@ -1,8 +1,9 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class WarehouseAdmin extends User implements OutletAdmin {
+public class WarehouseAdmin extends User implements OutletAdmin, Serializable {
     protected Warehouse warehouse;
     protected ArrayList<String> messages;
     protected ArrayList<Item> items_to_order;

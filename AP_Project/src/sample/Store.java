@@ -1,9 +1,10 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-public class Store extends Outlet {
+public class Store extends Outlet implements Serializable {
     protected StoreAdmin admin;
     protected Warehouse warehouse;
 

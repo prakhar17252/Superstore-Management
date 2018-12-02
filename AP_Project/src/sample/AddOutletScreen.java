@@ -57,7 +57,7 @@ public class AddOutletScreen extends Application implements Initializable {
         primaryStage.show();
     }
 
-    public void addWarehouse(ActionEvent actionEvent) {
+    public void addWarehouse(ActionEvent actionEvent) throws IOException {
         try {
             String user = username.getText();
             String pass = password.getText();
@@ -68,9 +68,10 @@ public class AddOutletScreen extends Application implements Initializable {
         } catch (OutletAlreadyExistsException e) {
             incorrectoutletname.setVisible(true);
         }
+        Database.superuser.serialize();
     }
 
-    public void addStore(ActionEvent actionEvent) {
+    public void addStore(ActionEvent actionEvent) throws IOException {
         try {
             String user = username.getText();
             String pass = password.getText();
@@ -85,6 +86,7 @@ public class AddOutletScreen extends Application implements Initializable {
         } catch (Exception e) {
             return;
         }
+        Database.superuser.serialize();
     }
 
     public void selectOutlet(ActionEvent actionEvent) {

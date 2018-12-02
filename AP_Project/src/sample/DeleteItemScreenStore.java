@@ -99,6 +99,7 @@ public class DeleteItemScreenStore extends Application implements Initializable 
             }
         } catch (Exception e) {
         }
+        Database.superuser.serialize();
     }
 
 

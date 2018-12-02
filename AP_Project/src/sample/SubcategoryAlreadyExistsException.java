@@ -1,6 +1,8 @@
 package sample;
 
-public class SubcategoryAlreadyExistsException extends Exception {
+import java.io.Serializable;
+
+public class SubcategoryAlreadyExistsException extends Exception implements Serializable {
     SubcategoryAlreadyExistsException(String message) {
         super(message);
     }

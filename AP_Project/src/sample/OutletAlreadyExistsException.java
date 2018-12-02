@@ -1,6 +1,8 @@
 package sample;
 
-public class OutletAlreadyExistsException extends Exception {
+import java.io.Serializable;
+
+public class OutletAlreadyExistsException extends Exception implements Serializable {
     OutletAlreadyExistsException(String message) {
         super(message);
     }

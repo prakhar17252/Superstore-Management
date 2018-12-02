@@ -1,6 +1,8 @@
 package sample;
 
-public class UserAlreadyExistsException extends Exception {
+import java.io.Serializable;
+
+public class UserAlreadyExistsException extends Exception implements Serializable {
     UserAlreadyExistsException(String message) {
         super(message);
     }

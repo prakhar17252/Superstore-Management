@@ -1,8 +1,9 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.TreeMap;
 
-public class Warehouse extends Outlet{
+public class Warehouse extends Outlet implements Serializable {
     protected WarehouseAdmin admin;
     protected TreeMap<String, Store> stores;
 

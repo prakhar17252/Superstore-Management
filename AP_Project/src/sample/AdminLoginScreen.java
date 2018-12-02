@@ -72,7 +72,7 @@ public class AdminLoginScreen extends Application implements Initializable {
 
 
 
-    public void logindetails(ActionEvent actionEvent) {
+    public void logindetails(ActionEvent actionEvent) throws IOException {
         selectoption.setVisible(false);
         String user = username.getText();
         String pass = password.getText();
@@ -110,6 +110,7 @@ public class AdminLoginScreen extends Application implements Initializable {
         } catch (Exception e) {
             selectOption();
         }
+        Database.superuser.serialize();
     }
 
     public void showInvalid() {

@@ -3,9 +3,9 @@ package sample;
 import java.util.TreeMap;
 
 public class Database {
+    public static Superuser superuser = new Superuser();
     public static WarehouseAdmin warehouseadmin = null;
     public static StoreAdmin storeadmin = null;
-    public static Superuser superuser = new Superuser();
     public static TreeMap<String, WarehouseAdmin> warehouseadmins = new TreeMap<>();
     public static TreeMap<String, StoreAdmin> storeadmins = new TreeMap<>();
     public static TreeMap<String, Store> stores = new TreeMap<>();
@@ -41,6 +41,7 @@ public class Database {
     }
 
     public static boolean checkWarehouseAdminLogin(String username, String password) {
+        getData();
         if(!warehouseadmins.containsKey(username)) return false;
         if(warehouseadmins.get(username).tryLogin(username, password)) {
             warehouseadmin = warehouseadmins.get(username);
@@ -50,6 +51,7 @@ public class Database {
     }
 
     public static boolean checkStoreAdminLogin(String username, String password) {
+        getData();
         if(!storeadmins.containsKey(username)) return false;
         if(storeadmins.get(username).tryLogin(username, password)) {
             storeadmin = storeadmins.get(username);
@@ -59,6 +61,7 @@ public class Database {
     }
 
     public static boolean checkSuperUserLogin(String username, String password) {
+        getData();
         return superuser.tryLogin(username, password);
     }
 
@@ -68,6 +71,13 @@ public class Database {
 
     public static TreeMap<String, Store> getStores() {
         return stores;
+    }
+
+    public static void getData() {
+        warehouseadmins = superuser.getWarehouseadmin();
+        storeadmins = superuser.getStoreadmin();
+        stores = superuser.getSuperstore().getStores();
+        warehouses = superuser.getSuperstore().getWarehouses();
     }
 }
 
