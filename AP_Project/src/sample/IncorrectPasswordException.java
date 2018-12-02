@@ -1,6 +1,8 @@
 package sample;
 
-public class IncorrectPasswordException extends Exception {
+import java.io.Serializable;
+
+public class IncorrectPasswordException extends Exception implements Serializable {
     IncorrectPasswordException(String message) {
         super(message);
     }

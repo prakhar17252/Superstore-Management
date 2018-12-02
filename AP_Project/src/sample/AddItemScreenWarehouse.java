@@ -113,7 +113,7 @@ public class AddItemScreenWarehouse extends Application implements Initializable
         }
     }
 
-    public void button_action(ActionEvent actionEvent) {
+    public void button_action(ActionEvent actionEvent) throws IOException {
         try {
             String opt = addtype.getValue().toString();
             if(opt.equals("Category")) {
@@ -139,6 +139,7 @@ public class AddItemScreenWarehouse extends Application implements Initializable
 
         } catch (Exception e) {
         }
+        Database.superuser.serialize();
     }
 
     @Override

@@ -83,7 +83,7 @@ public class DeleteItemScreenWarehouse extends Application implements Initializa
         }
     }
 
-    public void buttonaction(ActionEvent actionEvent) throws  IOException {
+    public void buttonaction(ActionEvent actionEvent) throws IOException {
         try {
             String type = selecttype.getValue().toString();
             String cat = selectcategory.getValue().toString();
@@ -99,6 +99,7 @@ public class DeleteItemScreenWarehouse extends Application implements Initializa
             }
         } catch (Exception e) {
         }
+        Database.superuser.serialize();
     }
 
     @Override

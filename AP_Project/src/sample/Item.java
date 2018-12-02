@@ -1,6 +1,8 @@
 package sample;
 
-public class Item implements Cloneable {
+import java.io.Serializable;
+
+public class Item implements Cloneable, Serializable {
     protected String name;
     protected int quantity;
     protected double D;

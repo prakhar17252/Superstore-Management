@@ -57,7 +57,7 @@ public class DeleteOutletScreen extends Application implements Initializable {
         }
     }
 
-    public void deleteStore(ActionEvent actionEvent) {
+    public void deleteStore(ActionEvent actionEvent) throws IOException {
         try {
             String n = name.getValue().toString();
             String username = Database.getStores().get(n).getAdmin().getUsername();
@@ -65,9 +65,10 @@ public class DeleteOutletScreen extends Application implements Initializable {
         } catch (Exception e) {
             return;
         }
+        Database.superuser.serialize();
     }
 
-    public void deleteWarehouse(ActionEvent actionEvent) {
+    public void deleteWarehouse(ActionEvent actionEvent) throws IOException {
         try {
             String n = name.getValue().toString();
             String username = Database.getWarehouses().get(n).getAdmin().getUsername();
@@ -75,9 +76,10 @@ public class DeleteOutletScreen extends Application implements Initializable {
         } catch (Exception e) {
             return;
         }
+        Database.superuser.serialize();
     }
 
-    public void delete(ActionEvent actionEvent) {
+    public void delete(ActionEvent actionEvent) throws IOException {
         try {
             String opt = type.getValue().toString();
             if(opt.equals("Store")) {
@@ -93,6 +95,7 @@ public class DeleteOutletScreen extends Application implements Initializable {
         } catch (Exception e) {
             return;
         }
+        Database.superuser.serialize();
     }
 
     @Override
