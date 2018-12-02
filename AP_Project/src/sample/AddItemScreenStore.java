@@ -17,6 +17,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ *  This is the file for adding Item on Store screen
+ *
+ */
 public class AddItemScreenStore extends Application implements Initializable {
 
     @FXML
@@ -26,10 +30,19 @@ public class AddItemScreenStore extends Application implements Initializable {
     @FXML
     Text ctext, stext, itext, qtext;
 
+    /**
+     *  Main Method of File
+     * @param args It is an array of String arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }
 
+    /**
+     *  This is the overrided Start Method
+     * @param primaryStage This is the main stage which loads the initial setup
+     * @throws IOException
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("AddItemScreenStore.fxml"));
@@ -38,25 +51,44 @@ public class AddItemScreenStore extends Application implements Initializable {
         primaryStage.show();
     }
 
+    /**
+     * Sets Quantity
+     * @param t selects quantity by setting up respective quantity true or false
+     */
     public void setQuantity(boolean t) {
         quantity.setVisible(t);
         qtext.setVisible(t);
     }
 
+    /**
+     * Sets Category
+     * @param t selects category by setting up respective category true or false
+     */
     public void setCategory(boolean t) {
         category.setVisible(t);
         ctext.setVisible(t);
     }
 
+    /** selects subcategory
+     * @param t selects subcategory by setting up respective sub category true or false
+     */
     public void setSubcategory(boolean t) {
         subcategory.setVisible(t);
         stext.setVisible(t);
     }
+
+    /** sets Item
+     * @param t selects item by setting up respective item true or false
+     */
     public void setItem(boolean t) {
         item.setVisible(t);
         itext.setVisible(t);
     }
 
+    /**
+     * @param actionEvent
+     * @throws IOException
+     */
     public void selectType(ActionEvent actionEvent) throws IOException {
         try {
             String opt = type.getValue().toString();

@@ -17,6 +17,9 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
+/**
+ *  Screen to Add items in warehouse
+ */
 public class AddItemScreenWarehouse extends Application implements Initializable {
 
     @FXML
